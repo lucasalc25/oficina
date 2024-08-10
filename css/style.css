@@ -1,7 +1,7 @@
 /* Estrutura do site
 ------------------------------------ */
 body {
-	background: #f4f2ec url(../img/fundo.png) repeat-x;
+	background: url(../img/fundo.png) repeat-x;
 	font: 12px "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif;
 }
 
@@ -21,9 +21,6 @@ a:hover {
 
 /* Logo 
 ------------------------------------ */
-#logo h1 {
-	float: left;
-}
 
 #logo a {
 	width: 248px;
@@ -59,11 +56,8 @@ nav ul li a:hover {
 	border-bottom: 1px solid #535858;
 }
 
-/* Principal 
------------------------------------- */
-
 #principal {
-	display: flex;
+    display: flex;
 	justify-content: space-between;
 }
 
@@ -80,7 +74,7 @@ aside {
 	
 }
 
-section#visita {
+section#visitas {
 	background: #cdc8b1;
 	padding: 10px 27px 27px 27px;
 	margin-top: 10px;
@@ -91,6 +85,7 @@ section#galeria {
 }
 
 #fotos-galeria {
+	z-index: 1;
 	display: grid;
 	grid-template: 50% 50% /
 					50% 50%
@@ -98,7 +93,7 @@ section#galeria {
 
 section#galeria a {
 	display: block;
-	background: url(../img/fundo-foto.png) no-repeat;
+	background: url(/img/fundo-foto.png) no-repeat;
 	padding: 17px 15px 17px 15px;
 	margin: 10px 0 0 20px;
 }
@@ -148,24 +143,10 @@ h4 {
 	margin-bottom: 0;
 }
 
-/* Rodapé
------------------------------------- */
-footer {
-	padding: 20px 0 30px 0;
-	text-align: center;
-	background: url(../img/fundo-rodape.png) no-repeat center top;
-	margin-top: 20px;
-}
+/* Formulários */
 
-footer p a {
-	padding: 2px 10px;
-}
-
-
-/* Formulários
------------------------------------- */
 input {
-	height: 20px;
+    height: 20px;
 	width: 80px;
 	background: #fff;
 	border: none;
@@ -192,6 +173,75 @@ legend {
 	display: none;
 }
 
+#capa {
+	position: relative;
+    width: 710px; /* Ajuste conforme a largura desejada */
+    margin: 0 auto; /* Centraliza o carrossel */
+    overflow: hidden; /* Oculta o excesso de imagens fora do contêiner */
+}
 
+/* Estilos para o carrossel */
+.carousel {
+    position: relative;
+    width: 100%;
+	height: 320px; /* Ajuste conforme a altura das imagens */
+	display: flex;
+    align-items: center; /* Alinha os itens no centro verticalmente */
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+	width: 100%; /* Define a largura do contêiner de imagens */
+}
+
+.carousel-images img {
+    width: 100%; /* Deve ser a mesma largura do contêiner */
+}
+
+.carousel button {
+    position: absolute;
+	top: 50%;
+    transform: translateY(-50%); /* Centraliza verticalmente o botão */
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Estilos para o modal */
+.modal {
+	display: none; /* Escondido por padrão */
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8); /* Fundo semitransparente */
+	justify-content: center;
+	align-items: center;
+	z-index: 10; /* Coloca o modal acima do conteúdo da página */
+}
+
+.modal img {
+	width: 50%;
+	height: 50%;
+	box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Efeito de sombra */
+}
+
+/* Quando o modal é o alvo (target), ele é exibido */
+.modal:target {
+    display: flex; /* Mostra o modal ao usar o seletor :target */
+}
 
 
