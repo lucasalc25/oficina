@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-	<title>Museu Nacional</title>
-	<meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museu nacional</title>
 
-	<!-- Estilo customizado -->
+    <!-- Estilo customizado -->
 	<link rel="stylesheet" type="text/css" href="css/site.css">
-
 </head>
 <body>
-
-	<div id="container"><!-- Início container -->
+    <div id="container"><!-- Início container -->
 		
 		<header><!-- Início header -->
 			<div id="logo">
-				<h1><a href=""></a></h1>
+				<h1><a href="#"></a></h1>
 			</div>
 
 			<nav><!-- Início nav -->
@@ -36,7 +35,17 @@
 			<div id="conteudo"><!-- Início conteudo -->
 
 				<section id="capa">
-					<img src="img/museu.png">
+					<div class="carousel">
+						<div class="carousel-images">
+							<img src="img/museu.png" alt="Imagem 1">
+							<img src="img/museu2.jpg" alt="Imagem 2">
+							<img src="img/museu3.jpg" alt="Imagem 3">
+							<img src="img/museu4.jpg" alt="Imagem 4">
+							<img src="img/museu5.jpg" alt="Imagem 5">
+						</div>
+						<button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+						<button class="next" onclick="moveSlide(1)">&#10095;</button>
+					</div>
 				</section>
 
 				<section id="postagens">
@@ -80,68 +89,55 @@
 						</ul>
 					</article>
 
-					<article id="historia">
+                    <article id="historia">
 						<h3>200 anos de história</h3>
 						<p>
-	                    	Numa ponta que avançava sobre o mar, posteriormente conhecida como Ponta do Calabouço, entre as praias de Piaçaba e Santa Luzia, no centro histórico do Rio de Janeiro, os portugueses construíram em 1603 a Fortaleza de Santiago, origem do conjunto arquitetônico que hoje abriga o Museu Histórico Nacional.
+	                    	Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet in voluptatum minima eum vitae eveniet, quam quia ea id neque magnam iusto mollitia ex repellat officiis aspernatur nisi earum repudiandae?
 	                    </p>
 
 	                    <a href=""><strong>Leia mais</strong></a>
 					</article>
-					
-				</section>
+                </section>
+            </div> <!--/fim conteudo -->
+            
+            <aside>
+                <section id="depoimento">
+                    <img src="/img/depoimento.png" alt="Depoimento">
+                </section>
 
-			</div><!--/fim conteudo -->
+                <section id="visitas">
+                    <h4>Faça uma visita</h4>
 
-			<aside><!-- Início aside -->
-				<section id="depoimento">
-					<img src="img/depoimento.png">
-				</section>
+                    <form>
+                        <fieldset>
+                            <legend>Selecione uma data</legend>
+                            <label for="data">Data</label>
+                            <input class="campo" id="data" type="text" placeholder="dd/mm/aaaa">
+                            <label for="qtd">Qtd de pessoas</label>
+                            <input class="campo" id="qtd" type="text" placeholder="1" style="width: 30px;">
+                        </fieldset>
 
-				<section id="visita"><!-- Início seção visita -->
-					<h4>Faça uma visita</h4>
-					<form>
-						<fieldset>
-							<legend>Selecione uma data</legend>
-							<label for="data">Data</label>
-							<input class="campo" type="text" id="data" value="dd/mm/aaaa">
-
-							<label for="qtd">Qtd pessoas</label>
-							<input class="campo" style="width: 30px;" type="text" id="qtd" value="1">
-
-						</fieldset>
-
-						<input class="botao" type="submit" value="Verificar disponibilidade">
-
-					</form>
-				</section><!--/fim seção visita -->
+                        <input class="botao" type="submit" value="Verificar disponibilidade">
+                    </form>
+                </section>
 
 				<section id="galeria">
 					<h4>Galeria de fotos</h4>
-					
+
 					<div id="fotos-galeria">
-						<a href="">
-							<img src="img/imagem1.jpg" height="93" width="93" alt="Descricao imagem">
-						</a>
-	
-						<a href="">
-							<img src="img/imagem2.jpg" height="93" width="93">
-						</a>
-	
-						<a href="">
-							<img src="img/imagem3.jpg" height="93" width="93">
-						</a>
-	
-						<a href="">
-							<img src="img/imagem4.jpg" height="93" width="93">
-						</a>
+						<a href="#modal"><img src="/img/imagem1.jpg" height="93" width="93" alt="Descricao imagem"></a>
+						<a href="#modal"><img src="/img/imagem2.jpg" height="93" width="93" alt="Descricao imagem"></a>
+						<a href="#modal"><img src="/img/imagem3.jpg" height="93" width="93" alt="Descricao imagem"></a>
+						<a href="#modal"><img src="/img/imagem4.jpg" height="93" width="93" alt="Descricao imagem"></a>
 					</div>
 
+					<!-- Modal para exibir a imagem ampliada -->
+					<div class="modal" id="modal">
+						<img id="imagem-ampliada" src="" alt="Imagem ampliada">
+					</div>
 				</section>
-
-			</aside><!--/fim aside -->
-
-		</div><!--/fim principal -->
+            </aside>
+        </div>
 
 		<footer>
 			<p>
@@ -158,9 +154,7 @@
 			</p>
 		</footer>
 
-	</div><!--/fim container -->
-
-
-
+    </div>
+	<script src="/js/index.js"></script>
 </body>
 </html>
